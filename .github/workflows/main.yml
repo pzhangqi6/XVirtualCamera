@@ -15,15 +15,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 第一步：检出（下载）你的仓库代码 (已更新到 v4)
+      # 第一步：检出（下载）你的仓库代码
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 第二步：设置Java环境 (已更新到 v4)
-      - name: Set up JDK 11
+      # 第二步：设置Java环境 (核心修改：版本从11改为17)
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
           cache: 'gradle'
 
@@ -35,7 +35,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew assembleDebug
 
-      # 第五-步：上传编译好的APK文件 (核心修改：已更新到 v4)
+      # 第五步：上传编译好的APK文件
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
