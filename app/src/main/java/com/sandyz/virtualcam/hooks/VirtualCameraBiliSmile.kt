@@ -39,6 +39,7 @@ class VirtualCameraBiliSmile : IHook {
         "tv.danmaku.bili",
         "com.smile.gifmaker",
         "com.tencent.mm",
+        "com.acmp",
         "com.tencent.mobileqq",
     )
 
